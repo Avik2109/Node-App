@@ -22,8 +22,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: echo "npm i" >> $GITHUB_STEP_SUMMARY
-      - run: echo "npm run build" >> $GITHUB_STEP_SUMMARY
+      - run: echo "npm i" >> $GITHUB_OUTPUT >> $GITHUB_STEP_SUMMARY
+      - run: echo "npm run build" >> $GITHUB_OUTPUT >> $GITHUB_STEP_SUMMARY
   unit-tests:
     runs-on: ubuntu-latest
 
@@ -39,5 +39,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: echo "npm i" >> $GITHUB_STEP_SUMMARY
-      - run: echo "npm run test" >> $GITHUB_STEP_SUMMARY
+      - run: echo "npm i" >> $GITHUB_OUTPUT >> $GITHUB_STEP_SUMMARY
+      - run: echo "npm run test" >> $GITHUB_OUTPUT >> $GITHUB_STEP_SUMMARY
